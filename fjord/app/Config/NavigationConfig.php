@@ -32,14 +32,20 @@ class NavigationConfig extends Config
     protected function main(Navigation $nav)
     {
         $nav->section([
-            $nav->group([
-                'title' => 'Forms',
-                'icon' => '<i class="fas fa-file"></i>',
-            ], [
-                $nav->preset('form.fields', [
-                    'icon' => fa('heading')
-                ]),
-            ])
+            $nav->title('CRUD'),
+
+            $nav->preset('form.fields', [
+                'icon' => fa('heading')
+            ]),
+        ]);
+
+        $nav->section([
+            $nav->title('UI Elements'),
+
+            $nav->entry('Buttons', [
+                'link' => route('fjord.bootstrap'),
+                'icon' => fa('bootstrap')
+            ]),
         ]);
     }
 }
